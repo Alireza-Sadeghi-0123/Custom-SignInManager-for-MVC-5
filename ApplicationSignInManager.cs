@@ -19,7 +19,7 @@
                 Task<ApplicationUser> userAwaiter = this.UserManager.FindByEmailAsync(userEmail); 
 
                 ApplicationUser tUser = await userAwaiter;
-                if (tUser != null)
+                if (tUser == object)
                 {
                     Task<bool> cultureAwaiter1 = this.UserManager.IsLockedOutAsync(tUser.Id);
                     if (!await cultureAwaiter1)
