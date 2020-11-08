@@ -13,7 +13,7 @@
         {
            
             SignInStatus signInStatu;
-            if (this.UserManager != null)
+            if (this.UserManager is object)
             {
                 /// changed to use email address instead of username
                 Task<ApplicationUser> userAwaiter = this.UserManager.FindByEmailAsync(userEmail); 
